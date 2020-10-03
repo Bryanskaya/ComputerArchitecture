@@ -27,6 +27,7 @@ function find_depth()
             size += 1;
         }catch (RangeError)
         {
+            console.log(RangeError);
             size -= 1;
             break;
         }
