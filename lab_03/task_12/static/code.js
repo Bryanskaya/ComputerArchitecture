@@ -8,6 +8,7 @@ window.onload = function() {
     const btn = document.getElementById("find-btn");
 
     // labels
+    const label_result = document.getElementById("result");
     const label_surname = document.getElementById("result-surname");
     const label_phone = document.getElementById("result-phone");
     const label_email = document.getElementById("result-email");
@@ -25,16 +26,28 @@ window.onload = function() {
 
     // click event
     btn.onclick = function() {
-        console.lod("*****");
         const email = f1.value;
-        console.lod(email);
-
 
         const url = `/find?email=${email}`;
         ajaxGet(url, function(stringAnswer) {
             const objectAnswer = JSON.parse(stringAnswer);
-            const result = objectAnswer.result;
-            label.innerHTML = `Ответ: ${result}`;
+
+            if (objectAnswer != null)
+            {
+                label_result.innerHTML = `Ответ:`
+                label_surname.innerHTML = `Фамилия: ${objectAnswer.Surname}`;
+                label_phone.innerHTML = `Телефон: ${objectAnswer.phone}`;
+                label_email.innerHTML = `Почта: ${objectAnswer.email}`;
+            }
+            else
+            {
+                label_result.innerHTML = `Ответ:`
+                label_surname.innerHTML = `Фамилия: -`;
+                label_phone.innerHTML = `Телефон: -`;
+                label_email.innerHTML = `Почта: -`;
+                alert(`Человек с данной почтой ${email} НЕ найден`);
+
+            }
         });
     };
 };

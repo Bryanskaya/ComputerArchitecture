@@ -1,32 +1,24 @@
 "use strict";
 
+//http://localhost:5000/page.html
+
 const file = "file.txt";
 
 
 function get_data(filename)
 {
     let data = [];
-    console.log("****");
     
     data.push(fs.readFileSync(filename, "utf-8"));
 
-    if (data != '')
-    {            
-        let temp = JSON.parse(data);
-
-        /*for (let i = 0; i < temp.length; i++)
-            if (temp[i].phone == phone || temp[i].email == email)
-                return "ERROR: not unique";
-
-        data = temp;**/
-    }
+    if (data != '')     
+        data = JSON.parse(data);
 
     return data;
 }
+
 function find_person(email)
 {
-    console.log("++++++++");
-
     let res = null;
     let data = get_data(file);
 
@@ -45,6 +37,7 @@ const express = require("express");
 
 // запускаем сервер
 const app = express();
+const fs = require("fs");
 const port = 5000;
 app.listen(port);
 console.log(`Server on port ${port}`);
@@ -64,11 +57,6 @@ app.use(function(req, res, next) {
 app.get("/find", function(request, response) {
     const email = request.query.email;
     let res = find_person(email);
-    let s;
-
-    /*if (res == null)
-        s = "NOT FOUND";
-    else
-        s = "FOUND";*/
+    
     response.end(JSON.stringify(res));
 });
