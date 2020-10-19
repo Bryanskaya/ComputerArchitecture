@@ -1,0 +1,36 @@
+body {
+    padding: 30px;
+    background: rgba(185, 232, 238, 0.829);
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+}
+
+.btn-class1{
+    font-weight: bold;
+    text-align: center;
+    width: 175px;
+    line-height: 30px;
+    border: 2px solid #2b9c97;
+    border-radius: 5px;
+    box-shadow: 0 0 0 60px rgba(black, 0.2);
+  }
+
+.btn-class1:hover {
+    background-color: #3eb4bd;
+    color: white;
+}
+
+.btn-class2{
+    background-color:  rgba(185, 232, 238, 0.829);
+    font-weight: bold;
+    text-align: center;
+    width: 180px;
+    line-height: 30px;
+    border: 2px solid #2b9c97;
+    border-radius: 5px;
+    box-shadow: 0 0 0 60px rgba(black, 0.2);
+  }
+
+.btn-class2:hover {
+    background-color: #3eb4bd;
+    color: white;
+}

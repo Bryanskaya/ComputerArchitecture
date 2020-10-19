@@ -1,0 +1,18 @@
+body {
+    padding: 30px;
+    background: Wheat;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+.btn-class {
+    display: inline-block;
+    width: 170px;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    border: 2px solid #b67014ee;
+    border-radius: 5px;
+    box-shadow: 0 0 0 60px rgba(0,0,0,0) inset, .1em .1em .2em #800;
+    background: linear-gradient(#fbb675, #f7992e 48%, #f8a03b 52%, #d88322);
+}

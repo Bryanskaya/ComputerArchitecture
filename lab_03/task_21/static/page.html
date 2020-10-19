@@ -5,22 +5,18 @@
     <title>Моя страница</title>
     
     <link rel="stylesheet" href="/style.css">
-    <!--<link rel="stylesheet" href="/style_task_3.css">-->
 </head>
 <body>
     <h1>Подобрать игры по возрасту</h1>
+    <form method="GET" action="/find_games">
 
     <p>Введите возраст:</p>
-    <input id="field-age" type="text" spellcheck="false" autocomplete="off">
+    <input name = "age" type="number" spellcheck="false" autocomplete="off">
 
     <br>
     <br>
 
-    <div id="find-btn" class="btn-class">Найти</div>
-
-    <br>
-    <br>
-
-    <script src="/code.js"></script>
+    <input type="submit" value="Найти">
+</form>
 </body>
 </html>

@@ -1,13 +1,5 @@
 body {
     padding: 30px;
-    background: Wheat;
+    background: rgba(185, 232, 238, 0.829);
     font-family: Geneva, Arial, Helvetica, sans-serif;
-}
-
-.btn-class {
-    padding: 8px;
-    background: Sienna;
-    color: white;
-    cursor: pointer;
-    display: inline-block;
 }
