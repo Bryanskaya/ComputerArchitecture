@@ -1,0 +1,24 @@
+body {
+    padding: 30px;
+    background: lightskyblue;
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+    font-style: italic;
+}
+
+.btn-class {
+    padding: 6px;
+    background: blue;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.btn-class:active{
+    background: Navy;
+    color: white;
+}
+
+.btn-class:hover {
+    background: red;
+    color: white;
+}

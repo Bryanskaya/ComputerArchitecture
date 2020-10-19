@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Подобрать игры по возрасту</title>
+</head>
+<body>
+    
+<h2>
+    Результат
+</h2>
+
+{{#each games}}
+    <div style="background: rgb(201, 248, 244); margin-bottom: 15px; padding: 4px;">
+        <h3>Название: {{this.name}}</h3>
+        <br>
+        Описание: {{this.decsr}} 
+        <br>
+        Возрастное ограничение: <i>{{this.age_limit}}+</i>
+    </div>
+    </div>
+{{/each}}
+
+</body>
+</html>
