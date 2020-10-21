@@ -1,0 +1,1 @@
+[{"name":"car_1","price":"1000000"},{"name":"car_3","price":"500000"},{"name":"car2","price":"500"},{"name":"car_4","price":"70000000"},{"name":"car_5","price":"650000"},{"name":"car7","price":"123456789"},{"name":"car8","price":"760000"}]

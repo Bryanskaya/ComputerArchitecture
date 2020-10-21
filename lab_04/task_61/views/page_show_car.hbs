@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Получить информацию о машине</title>
+    <link rel="stylesheet" href="/style.css"
+</head>
+<body>
+    <h1>Узнать стоимость машины по типу</h1>
+    <p>Введите тип:</p>
+    <input id="name" type="text" class="input-class" spellcheck="false" autocomplete="off">
+    <br>
+    <br>
+
+    <p><input id="find-btn" type="submit" value="Готово" class="btn-class"></p>
+    <br>
+    <br>
+
+    <h2 id="result"></h2>
+    <p id="car_name"></p>
+    <p id="price"></p>
+
+    <script>
+        "use strict";
+
+        function ajaxGet(urlString, callback) {
+            let r = new XMLHttpRequest();
+            r.open("GET", urlString, true);
+            r.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
+            r.send(null);
+            r.onload = function() {
+                callback(r.response);
+            };
+        };
+
+
+        window.onload = function() {
+            const f1 = document.getElementById("name");
+
+            const lbl_result = document.getElementById("result");
+            const lbl_name = document.getElementById("car_name");
+            const lbl_price = document.getElementById("price");
+
+            const btn = document.getElementById("find-btn");
+
+
+            function show_car(res){
+                lbl_result.innerHTML = 'Результат поиска:';
+                lbl_name.innerHTML = `Название: ${res.name}`;
+                lbl_price.innerHTML = `Стоимость: ${res.price}`;
+            }
+
+            function show_empty(){
+                lbl_result.innerHTML = 'Результат поиска:';
+                lbl_name.innerHTML = "Не найдено";
+                lbl_price.innerHTML = "";
+            }
+
+
+            btn.onclick = function() {
+                const name = f1.value;
+                const url = `/select/car?name=${name}`
+
+                ajaxGet(url, function(stringAnswer){
+                    const res = JSON.parse(stringAnswer);
+
+                    if (res.name != null)
+                        show_car(res);
+                    else
+                        show_empty();
+                });
+            }
+        }
+    </script>
+
+</body>
+</html>
