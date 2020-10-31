@@ -20,6 +20,10 @@ body {
     background: red;
 }
 
+.btn-class:active {
+    background: black;
+}
+
 .input-class {
     width: 25em;
 }
