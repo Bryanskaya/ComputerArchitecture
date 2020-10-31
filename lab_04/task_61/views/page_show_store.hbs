@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Получить информацию о складе</title>
+    <link rel="stylesheet" href="/style.css"
+</head>
+<body>
+    <h1>Получить информацию о машинах на складе</h1>
+    <p>Введите название склада:</p>
+    <input id="name" type="text" class="input-class" spellcheck="false" autocomplete="off">
+    <br>
+    <br>
+
+    <p><input id="find-btn" type="submit" value="Готово" class="btn-class"></p>
+    <br>
+    <br>
+
+    <h2 id="result"></h2>
+    <p id="store_name"></p>
+    <p id="cars_arr"></p>
+
+    <script>
+        "use strict";
+
+        function ajaxGet(urlString, callback) {
+            let r = new XMLHttpRequest();
+            r.open("GET", urlString, true);
+            r.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
+            r.send(null);
+            r.onload = function() {
+                callback(r.response);
+            };
+        };
+
+
+        window.onload = function() {
+            const f1 = document.getElementById("name");
+
+            const lbl_result = document.getElementById("result");
+            const lbl_name = document.getElementById("store_name");
+            const lbl_price = document.getElementById("cars_arr");
+
+            const btn = document.getElementById("find-btn");
+
+
+            function show_store(res){
+                console.log(res.name, res.cars);
+                lbl_result.innerHTML = 'Результат поиска:';
+                lbl_name.innerHTML = `Название: ${res.name}`;
+                lbl_price.innerHTML = `Машины на складе: ${res.cars}`;
+            }
+
+            function show_empty(){
+                lbl_result.innerHTML = 'Результат поиска:';
+                lbl_name.innerHTML = "Не найдено";
+                lbl_price.innerHTML = "";
+            }
+
+
+            btn.onclick = function() {
+                const name = f1.value;
+                const url = `/select/store?name=${name}`
+
+                ajaxGet(url, function(stringAnswer){
+                    const res = JSON.parse(stringAnswer);
+
+                    if (res.name != null)
+                        show_store(res);
+                    else
+                        show_empty();
+                });
+            }
+        }
+    </script>
+
+</body>
+</html>

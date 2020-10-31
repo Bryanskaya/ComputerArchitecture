@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Машинки</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Машины и склады</h1>
+    
+    <h2>Машины</h2>
+    <form action="/insert/record/car">
+        <input id="btn-new-car" type="submit" class="btn-class" value ="Создать новый тип машины">
+    </form>
+    <br>
+    <form action="/select/record/car">
+        <input id="btn-get-price" type="submit" class="btn-class" value="Узнать стоимость машины">
+    </form>
+    <br>
+    <br>
+    <h2>Склады</h2>
+    <form action="/insert/record/store">
+        <input id="btn-new-store" type="submit" class="btn-class" value="Создать новый склад с машинами">
+    </form>
+    <br>
+    <form action="/select/record/store">
+        <input id="btn-get-info-cars" type="submit" class="btn-class" value="Узнать информацию о машинах на складе">
+    </form>
+
+</body>
+</html>

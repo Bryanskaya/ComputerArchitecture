@@ -1,0 +1,1 @@
+[{"name":"store1","cars":["car1","car2"]},{"name":"store2","cars":["car2","car7","car5"]},{"name":"store3","cars":["car1","car2","car3","car4"]}]

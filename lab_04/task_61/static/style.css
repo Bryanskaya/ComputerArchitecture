@@ -1,0 +1,29 @@
+body {
+    text-align: center;
+    padding: 30px;
+    background: lightskyblue;
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+}
+
+.btn-class {
+    text-align: center;
+    padding: 25px 20px;
+    background: blue;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    width: 25em;
+    height: 5em;
+}
+
+.btn-class:hover {
+    background: red;
+}
+
+.btn-class:active {
+    background: black;
+}
+
+.input-class {
+    width: 25em;
+}
